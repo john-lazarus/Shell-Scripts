@@ -1,0 +1,22 @@
+#! /bin/bash
+
+## This Script Makes Final Changes to the Downtime Data File and Moves it into the Appropriate Directories for Later Review
+
+#Global Variables
+curr_date="$(date +%d-%m-%Y)"
+DIRECTORY=$PWD/Backup
+
+if [ -e $PWD/Downtime_Data.txt ]
+    then
+    echo "Moving Data File into the Backup Folder"
+   	 if [ -d "$DIRECTORY" ]; then
+   		 mv -v $PWD/Downtime_Data.txt "$DIRECTORY/Downtime_Data_for_$curr_date.txt"
+   	 else
+   		 echo "Creating Backup Directory under --> 'Backup'"
+   		 mkdir $PWD/Backup
+   		 mv -v $PWD/Downtime_Data.txt "$DIRECTORY/Downtime_Data_for_$curr_date.txt"
+   	 fi
+else
+    echo "Data File Not Found.. Please Check and Re-Try"
+fi
+echo "Data File Finalized"
