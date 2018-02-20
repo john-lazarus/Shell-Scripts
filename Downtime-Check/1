@@ -1,0 +1,35 @@
+#! /bin/bash
+
+#Global Variables
+curr_date=`date +%D`
+curr_time=`date +%T`
+
+## This Script Checks the Downtime of a System and logs the Time Stamps into a file labelled Downtime.txt
+
+
+#Code From Below
+
+#Creating Downtime Data File
+wget -q --tries=2 --timeout=2 --spider http://google.com
+if [[ $? -eq 0 ]];
+      then
+   		echo "Online.. Nothing to Do"
+   		exit 0                 	 
+    	else
+    	echo "Offline"
+    	  if [ -e $PWD/Downtime_Data.txt ]
+   		  then
+        	echo "Data File Already Exists.. Appending New Data into File"
+        	echo "Present Working Directory is $PWD"
+        	date +%T >> Downtime_Data.txt
+        	echo "Append Successful!"
+        	exit 0
+       	else
+       			 echo "Data File NOT FOUND.. Creating.."
+       			 touch "Downtime_Data.txt"
+       			 echo "Current time is $curr_time.. Adding it into the Data File.."
+       			 date +%T >> Downtime_Data.txt
+       			 echo "Add Successful!"
+       			 exit 0
+        fi
+fi
