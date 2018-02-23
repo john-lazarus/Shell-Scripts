@@ -1,0 +1,1 @@
+This Bash Script is intended to Run on Ubuntu Distros. I have been able to only test this with Ubunutu 16.04 but it should work just fine with any Ubuntu version based on SYSTEMD and the newer APT (not apt-get). Feel free to add or take from this Script. Suggestions and Improvements are always welcome, Thanks!
