@@ -36,6 +36,11 @@ else
         exit 0
 fi
 
+#Glances File Creation
+mkdir /usr/lib/systemd/system/
+touch /usr/lib/systemd/system/glancesweb.service
+
+
 
 #Glances Service Creation
 /bin/cat <<EOM >$FILE
@@ -46,6 +51,7 @@ ExecStart = /usr/bin/glances -w -t 5
 [Install]
 WantedBy = multi-user.target
 EOM
+
 
 
 #Glances Service Setup
