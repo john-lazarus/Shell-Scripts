@@ -4,19 +4,6 @@
 localaddress=$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/')
 FILE="/usr/lib/systemd/system/glancesweb.service"
 
-
-##LAMPP Install
-#echo "Initiating LAMPP Install"
-#apt-get install lamp-server^
-#if [ $? -eq 0 ]; then
-#	echo "LAMPP Installation Succeeded"
-#else
-#	echo "LAMPP Installation Error, Please Check Logs and Re-Run the Script"
-#	exit 0
-#fi
-
-
-
 #Glances install
 apt -y install glances python-bottle
 if [ $? -eq 0 ]; then
