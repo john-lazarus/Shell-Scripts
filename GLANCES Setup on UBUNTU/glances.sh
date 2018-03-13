@@ -47,6 +47,7 @@ touch /usr/lib/systemd/system/glancesweb.service
 [Unit]
 Description = Glances in Web Server Mode
 After = network.target
+[Service]
 ExecStart = /usr/bin/glances -w -t 5
 [Install]
 WantedBy = multi-user.target
