@@ -6,4 +6,8 @@ It is to be duly noted that the same Script can be modified to use YUM on RPM ba
 
 In some cases the *systemd unit* fails to start. In that case, it is advised to Reboot the System and manually restart the service via *systemd*
 
+
+
+*The Second Script* by the name 'screenshot.sh' simply scans the Local Network and Saves the Glances view from all the running Devices in the form of a screenshot titled by the Private IP of the Device. The Script achieves this by automatically installing two third-party tools viz. nmap & cutycapt to gather a list of the running hosts and take screenshots respectively since almost no Linux/Unix distro has this functionality built-in. Also, this Script is heavily aimed at an Ubuntu Machine under the 192.168.0.0/24 subnet, kindly make your changes accordingly.
+
 Feel free to add or take from this Script. Suggestions and Improvements are always welcome, Thanks!
