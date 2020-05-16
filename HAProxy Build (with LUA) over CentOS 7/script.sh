@@ -140,7 +140,7 @@ echo "${bold}This script is now going to set up HAProxy with the following param
 echo "${bold}Current Working Directory:${normal} $PWD/"
 echo "${bold}HAProxy Source Download URL:${normal} $1"
 echo "${bold}LUA Source Download URL:${normal} $2"
-read -p "Proceed with the above parameters? Press Y or N: " -n 1 -r
+read < /dev/tty -p "Proceed with the above parameters? Press Y or N: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -230,7 +230,7 @@ $UDPServerRun 514
 local0.* /var/log/haproxy-traffic.log
 local0.notice /var/log/haproxy-admin.log
 EOL
-echo "${bold}Rsyslog Configration File Created at:{normal} $rsyslogconffile"
+echo "${bold}Rsyslog Configration File Created at:${normal} $rsyslogconffile"
 sleep 1
 echo "Restarting Rsyslog Daemon"
 systemctl restart rsyslog
