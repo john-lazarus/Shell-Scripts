@@ -114,7 +114,7 @@ fi
 #OS Check
 grep -q "CentOS Linux release 7" $releasefile
 if [ $? = 0 ]; then
-    echo "CenOS 7 Detected. $checkmark"
+    echo "CentOS 7 Detected. $checkmark"
     sleep 1
 else
 	echo "${bold}This is not CentOS 7. Exiting..${normal} $crossmark"
