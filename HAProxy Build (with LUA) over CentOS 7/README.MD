@@ -20,9 +20,9 @@ Example: ./script.sh https://www.haproxy.org/download/2.1/src/haproxy-2.1.4.tar.
 
 **Remotely:**
 
-curl -s https://ronnietalks.com/shell-scripts/haproxy/script.sh | bash -s -- arg1 arg2
+curl -L -s https://ronnietalks.com/shell-scripts/haproxy/script.sh | bash -s -- arg1 arg2
 
-Example: curl -s https://ronnietalks.com/shell-scripts/haproxy/script.sh | bash -s -- https://www.haproxy.org/download/2.1/src/haproxy-2.1.4.tar.gz https://www.lua.org/ftp/lua-5.3.5.tar.gz
+Example: curl -L -s https://ronnietalks.com/shell-scripts/haproxy/script.sh | bash -s -- https://www.haproxy.org/download/2.1/src/haproxy-2.1.4.tar.gz https://www.lua.org/ftp/lua-5.3.5.tar.gz
 
 
 [![Demo HAProxy Script](https://s7.gifyu.com/images/New-video.gif)](https://gifyu.com/image/nQzx)
