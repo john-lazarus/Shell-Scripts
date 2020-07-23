@@ -112,12 +112,17 @@ else
 fi
 
 #OS Check
-grep -q "CentOS Linux release 7" $releasefile
-if [ $? = 0 ]; then
+if grep -q "CentOS Linux release 7" $releasefile; then
     echo "CentOS 7 Detected. $checkmark"
     sleep 1
+elif grep -q "CentOS Linux release 8" $releasefile; then
+	echo "CentOS 8 Detected. $checkmark"
+elif grep -q "Red Hat Enterprise Linux release 7" $releasefile; then
+	echo "Red Hat Enterprise Linux 7 Detected. $checkmark"
+elif grep -q "Red Hat Enterprise Linux release 8" $releasefile; then
+	echo "Red Hat Enterprise Linux 8 Detected. $checkmark"
 else
-	echo "${bold}This is not CentOS 7. Exiting..${normal} $crossmark"
+	echo "${bold}Uncompatible OS Detected. This script is to be run only on RHEL/CentOS 7x,8x. Exiting..${normal} $crossmark"
 	exit_func
 fi
 
@@ -225,7 +230,6 @@ cat >$rsyslogconffile <<"EOL"
 $ModLoad imudp
 $UDPServerAddress 127.0.0.1
 $UDPServerRun 514
-
 # Creating separate log files based on the severity
 local0.* /var/log/haproxy-traffic.log
 local0.notice /var/log/haproxy-admin.log
