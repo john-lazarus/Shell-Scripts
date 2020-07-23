@@ -4,7 +4,7 @@ This Script supports and is tested on the BASH Shell on RHEL/CentOS 7.x,8.x only
 
 1.) 1st Argument: HAProxy Sorce Code Download URL. ## example: https://www.haproxy.org/download/2.1/src/haproxy-2.1.7.tar.gz
 
-2.) 2nd Argument: LUA Source Code Download URL. ##example: https://www.lua.org/ftp/lua-5.3.5.tar.gz
+2.) 2nd Argument: LUA Source Code Download URL. ##example: https://www.lua.org/ftp/lua-5.4.0.tar.gz
 
 ## Important: It is extremely necessary that the 1st Argument is the HAProxy URL and the Second the LUA URL and not vice versa as I have not had time to implement dynamic URLs for both the argument though it can be done. If you want to contribute you may issue a pull request.
 
@@ -16,13 +16,13 @@ chmod +x script.sh
 
 ./script.sh {arg1} {arg2}
 
-Example: ./script.sh https://www.haproxy.org/download/2.1/src/haproxy-2.1.7.tar.gz https://www.lua.org/ftp/lua-5.3.5.tar.gz
+Example: ./script.sh https://www.haproxy.org/download/2.1/src/haproxy-2.1.7.tar.gz https://www.lua.org/ftp/lua-5.4.0.tar.gz
 
 **Remotely:**
 
 curl -L -s https://ronnietalks.com/shell-scripts/haproxy/script.sh | bash -s -- arg1 arg2
 
-Example: curl -L -s https://ronnietalks.com/shell-scripts/haproxy/script.sh | bash -s -- https://www.haproxy.org/download/2.1/src/haproxy-2.1.7.tar.gz https://www.lua.org/ftp/lua-5.3.5.tar.gz
+Example: curl -L -s https://ronnietalks.com/shell-scripts/haproxy/script.sh | bash -s -- https://www.haproxy.org/download/2.1/src/haproxy-2.1.7.tar.gz https://www.lua.org/ftp/lua-5.4.0.tar.gz
 
 
 [![Demo HAProxy Script](https://s7.gifyu.com/images/New-video.gif)](https://gifyu.com/image/nQzx)
