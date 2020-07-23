@@ -219,6 +219,9 @@ useradd -r haproxy
 echo "${bold}Creating Empty Config File at:${normal} /etc/haproxy/haproxy.cfg"
 touch /etc/haproxy/haproxy.cfg
 echo "Done!"
+echo "${bold}Creating Empty Directory to hold Certificates at:${normal} /etc/haproxy/certs/"
+mkdir -p /etc/haproxy/certs/
+echo "Done!"
 echo "${bold}Housekeeping Done!${normal}"
 sleep 2
 
