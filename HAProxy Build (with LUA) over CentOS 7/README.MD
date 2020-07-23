@@ -2,7 +2,7 @@
 
 This Script supports and is tested on the BASH Shell on RHEL/CentOS 7.x,8.x only!
 
-1.) 1st Argument: HAProxy Sorce Code Download URL. ## example: https://www.haproxy.org/download/2.1/src/haproxy-2.1.4.tar.gz
+1.) 1st Argument: HAProxy Sorce Code Download URL. ## example: https://www.haproxy.org/download/2.1/src/haproxy-2.1.7.tar.gz
 
 2.) 2nd Argument: LUA Source Code Download URL. ##example: https://www.lua.org/ftp/lua-5.3.5.tar.gz
 
@@ -16,7 +16,7 @@ chmod +x script.sh
 
 ./script.sh {arg1} {arg2}
 
-Example: ./script.sh https://www.haproxy.org/download/2.1/src/haproxy-2.1.4.tar.gz https://www.lua.org/ftp/lua-5.3.5.tar.gz
+Example: ./script.sh https://www.haproxy.org/download/2.1/src/haproxy-2.1.7.tar.gz https://www.lua.org/ftp/lua-5.3.5.tar.gz
 
 **Remotely:**
 
