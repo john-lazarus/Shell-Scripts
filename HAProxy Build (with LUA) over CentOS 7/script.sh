@@ -200,7 +200,7 @@ echo "${bold}Commencing Building & Installing HAProxy System-Wide...${normal}"
 sleep 1
 tar -xvzf $setupdir$haproxydownloadfile -C $setupdir
 mv -v "$setupdir"haproxy-* "$setupdir""$haproxyextracteddir"
-cd $haproxydir && make USE_NS=1 USE_TFO=1 USE_OPENSSL=1 USE_ZLIB=1 USE_LUA=1 USE_PCRE=1 USE_SYSTEMD=1 USE_LIBCRYPT=1 USE_THREAD=1 TARGET=linux-glibc LUA_INC=$lualocalinstalldir/include LUA_LIB=$lualocalinstalldir/lib && make install
+cd $haproxydir && make USE_NS=1 USE_TFO=1 USE_OPENSSL=1 USE_ZLIB=1 USE_LUA=1 USE_PCRE=1 USE_SYSTEMD=1 USE_LIBCRYPT=1 USE_THREAD=1 TARGET=linux-glibc EXTRA_OBJS="contrib/prometheus-exporter/service-prometheus.o" LUA_INC=$lualocalinstalldir/include LUA_LIB=$lualocalinstalldir/lib && make install
 echo "${bold}HAProxy Successfully Complied and Installed Syestem-Wide${normal}"
 sleep 1
 echo "${bold}You can check HAProxy build parameters using haproxy -vv after the script finishes.${normal}"
