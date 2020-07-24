@@ -113,14 +113,21 @@ fi
 
 #OS Check
 if grep -q "CentOS Linux release 7" $releasefile; then
-    echo "CentOS 7 Detected. $checkmark"
+    echo "CentOS 7 Detected. $checkmark Installing EPEL..."
     sleep 1
+    yum -y install epel-release
 elif grep -q "CentOS Linux release 8" $releasefile; then
-	echo "CentOS 8 Detected. $checkmark"
+	echo "CentOS 8 Detected. $checkmark Installing EPEL..."
+	yum -y install epel-release
 elif grep -q "Red Hat Enterprise Linux release 7" $releasefile; then
-	echo "Red Hat Enterprise Linux 7 Detected. $checkmark"
+	echo "Red Hat Enterprise Linux 7 Detected. $checkmark Installing EPEL..."
+	yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+	subscription-manager repos --enable "rhel-*-optional-rpms" --enable "rhel-*-extras-rpms"  --enable "rhel-ha-for-rhel-*-server-rpms"
 elif grep -q "Red Hat Enterprise Linux release 8" $releasefile; then
-	echo "Red Hat Enterprise Linux 8 Detected. $checkmark"
+	echo "Red Hat Enterprise Linux 8 Detected. $checkmark Installing EPEL..."
+	yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+	ARCH=$( /bin/arch )
+	subscription-manager repos --enable "codeready-builder-for-rhel-8-${ARCH}-rpms"
 else
 	echo "${bold}Uncompatible OS Detected. This script is to be run only on RHEL/CentOS 7x,8x. Exiting..${normal} $crossmark"
 	exit_func
@@ -159,8 +166,7 @@ fi
 echo "${bold}Commencing Download of Dependencies...${normal}"
 sleep 1
 
-#Environment Preparation for CentOS 7
-yum -y install epel-release
+#Environment Preparation
 yum -y install vim wget curl htop zip unzip net-tools telnet rsyslog gcc openssl-devel readline-devel systemd-devel make pcre-devel
 if [ $? -eq 0 ]; then
         echo "${bold}System Dependencies Resolved & Environment Successfully Created.${normal}"
