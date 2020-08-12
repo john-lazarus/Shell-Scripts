@@ -20,9 +20,9 @@ Example: ./script.sh https://www.haproxy.org/download/2.1/src/haproxy-2.1.7.tar.
 
 **Remotely:**
 
-curl -L -s 'https://raw.githubusercontent.com/ronnie-lazarus/Shell-Scripts/master/HAProxy%20Build%20(with%20LUA)%20over%20CentOS%207/script.sh' | bash -s -- arg1 arg2
+curl -L -s 'https://raw.githubusercontent.com/ronnie-lazarus/Shell-Scripts/master/HAProxy%20Build%20(with%20LUA)%20over%20RHEL%20or%20CentOS%207.x%20%2B%208.x/script.sh' | bash -s -- arg1 arg2
 
-Example: curl -L -s 'https://raw.githubusercontent.com/ronnie-lazarus/Shell-Scripts/master/HAProxy%20Build%20(with%20LUA)%20over%20CentOS%207/script.sh' | bash -s -- https://www.haproxy.org/download/2.1/src/haproxy-2.1.7.tar.gz https://www.lua.org/ftp/lua-5.3.5.tar.gz
+Example: curl -L -s 'https://raw.githubusercontent.com/ronnie-lazarus/Shell-Scripts/master/HAProxy%20Build%20(with%20LUA)%20over%20RHEL%20or%20CentOS%207.x%20%2B%208.x/script.sh' | bash -s -- https://www.haproxy.org/download/2.1/src/haproxy-2.1.7.tar.gz https://www.lua.org/ftp/lua-5.3.5.tar.gz
 
 
 [![Demo HAProxy Script](https://s7.gifyu.com/images/New-video.gif)](https://gifyu.com/image/nQzx)
